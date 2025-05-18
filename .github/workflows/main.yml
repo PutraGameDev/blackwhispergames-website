@@ -22,12 +22,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v3
 
       - name: Upload site files
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './'  # Ganti kalau file web kamu ada di folder `dist` atau `docs`
+          path: './'
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
