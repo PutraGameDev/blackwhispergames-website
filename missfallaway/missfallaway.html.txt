@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlackWhisper Games Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1600172454282-9329da88e748?auto=format&fit=crop&w=1280&q=80') no-repeat center center fixed;
+      background-size: cover;
+      animation: fadein 1.5s ease-in;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 2.5em;
+      font-family: 'Orbitron', sans-serif;
+      animation: glitch 3s infinite;
+      color: #00ffe7;
+      text-shadow: 0 0 8px #00ffe7, 0 0 15px #00ffe7;
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(1px, -1px); }
+      60% { transform: translate(-1px, -1px); }
+      80% { transform: translate(1px, 1px); }
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      margin-bottom: 40px;
+      padding: 0 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: 1px solid white;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: white;
+      color: black;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 80px;
+      padding: 0 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+      border-left: 5px solid #00ffe7;
+      padding-left: 10px;
+    }
+
+    .missfallaway, .form-section {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00ffe7;
+      animation: fadein 2s ease-in;
+    }
+
+    .cta, .form-section button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #00ffe7;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .cta:hover, .form-section button:hover {
+      background-color: white;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      resize: none;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .links a {
+      background-color: #00ffe7;
+      color: black;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      background-color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-top: 1px solid #00ffe7;
+    }
+
+    @media (max-width: 768px) {
+      header { font-size: 1.8em; }
+      nav a { padding: 6px 12px; font-size: 0.9em; }
+      section { padding: 0 10px; }
+      h2 { font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+  <header>BlackWhisper Games Studio</header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#missfallaway">MissFallAway</a>
+    <a href="#join">Join Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About the Studio</h2>
+    <p>BlackWhisper Games Studio is an indie developer studio focused on deep and atmospheric horror experiences. We create games with strong narratives, intense gameplay, and high-quality visuals for mobile platforms.</p>
+  </section>
+
+  <section id="missfallaway" class="missfallaway">
+    <h2>MissFallAway</h2>
+    <p><em>MissFallAway</em> is a survival horror game where you must escape from a mysterious forest haunted by terrifying creatures. Use your flashlight, manage your limited stamina, and use your wits to survive and solve puzzles hidden in each house.</p>
+    <a href="#" class="cta">Coming Soon</a>
+  </section>
+
+  <section id="join" class="form-section">
+    <h2>Join the Studio Development</h2>
+    <form onsubmit="sendToWA(event)">
+      <input type="text" id="skills" placeholder="Your skills (e.g., 3D modeling, C#, UI/UX, etc.)" required>
+      <input type="text" id="talents" placeholder="Your talents (e.g., creative, leadership, patient, etc.)" required>
+      <textarea id="additional" rows="3" placeholder="Additional notes (optional)"></textarea>
+      <button type="submit">Submit & Join Studio</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Social Media</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; align-items: flex-start;">
+      <div style="flex: 1; min-width: 250px;">
+        <p style="font-size: 1.1em; margin-bottom: 10px;">
+          Have questions or want to collaborate with us?
+        </p>
+        <p style="font-size: 1.05em;"><strong>Email:</strong> blackwhispergames@gmail.com</p>
+      </div>
+      <div style="flex: 1.2; min-width: 280px;">
+        <div class="links">
+          <a href="https://discord.gg/jxe3kJ5p" target="_blank">Join Our Discord Community</a>
+          <a href="https://youtu.be/Mxr4liUZ7Is?si=Y27Pm0p64CUDZonX" target="_blank">Watch the Game Trailer on YouTube</a>
+          <a href="https://www.tiktok.com/@blackwhisper.games?_t=ZS-8wOrfKJlFaR&_r=1" target="_blank">Follow Us on TikTok</a>
+          <a href="https://youtube.com/@putragamedev?si=1jz-tQ25hJ83khsQ" target="_blank">Visit Our Devlog Channel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 BlackWhisper Games Studio by Putra Ramadhani.
+  </footer>
+
+  <script>
+    function sendToWA(event) {
+      event.preventDefault();
+      const skills = document.getElementById('skills').value;
+      const talents = document.getElementById('talents').value;
+      const additional = document.getElementById('additional').value;
+      const msg = `Hello! I would like to join BlackWhisper Studio.%0A%0ASkills: ${skills}%0ATalents: ${talents}%0AAdditional: ${additional}`;
+      window.open(`https://wa.me/6289604345446?text=${msg}`, '_blank');
+    }
+  </script>
+  
+  <script>
+    msg,local(removed);
+    (*.#.$.&.,...?.))default)/
+    //script system on removed
+    removed = int("enter removed = "))
+    print(removed)
+    data<sience>; on removed.(set system)
+    if system == removed;
+                        print(sirnce data singgle).
+    on system = "data play"
+    <in system = "data removed" ('preventDefault')
+    msg == default ('preventDefault');
+    if msg == default;
+     data set ('preventDefault')
+     
+     msg == default;
+     if ("#.$.,.!.;.?.+.-._.@./.~.`.|.•.√.") 
+     data singgle<preventDefault>
+     
+  </script>
+</body>
+</html>
